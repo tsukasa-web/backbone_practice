@@ -1,0 +1,254 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: url("../img/bg_pattern.png");
+  background-size: 132px 132px;
+  font-family: Arial, sans-serif; }
+
+label {
+  font-weight: bold; }
+
+h1 {
+  margin: 0 0 30px;
+  font-family: "Squada One", cursive;
+  font-size: 60px;
+  text-align: center;
+  color: #221e1f; }
+
+h2 {
+  margin: 0 0 15px;
+  font-family: "Squada One", cursive;
+  font-size: 40px;
+  color: #221e1f; }
+
+p {
+  margin: 0 0 10px; }
+
+footer {
+  text-align: center; }
+
+#toggle-all, .toggle {
+  display: inline-block;
+  margin: -0.5em 0.5em 0 0;
+  vertical-align: middle; }
+
+#todoapp {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0 0; }
+
+#new-todo {
+  width: 100%;
+  margin: 0 0 15px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #221e1f;
+  font-size: 20px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box; }
+
+#new-deadline {
+  display: inline-block;
+  margin: 0;
+  vertical-align: top; }
+
+.new-label {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  font-family: "Squada One", cursive;
+  font-size: 22px;
+  color: #221e1f; }
+
+.radio-list {
+  list-style: none;
+  margin: 0 0 15px;
+  padding: 0; }
+  .radio-list > li {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    padding-left: 20px; }
+    .radio-list > li:first-child {
+      margin: 0;
+      padding: 0; }
+    .radio-list > li:last-child {
+      margin-right: 0; }
+  .radio-list input {
+    position: absolute;
+    left: 0;
+    top: -0.2em; }
+
+.save-paragraph {
+  margin: 0 0 30px 0;
+  text-align: right; }
+
+#new-save {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border-top: 1px solid #221e1f;
+  border-left: 1px solid #221e1f;
+  border-right: 1px solid #221e1f;
+  border-bottom: 3px solid #221e1f;
+  font-family: "Squada One", cursive;
+  font-size: 22px;
+  color: #221e1f;
+  text-decoration: none;
+  background-color: #80ad21; }
+  #new-save:hover {
+    background-color: #a4d53c;
+    margin-top: 2px;
+    border: 1px solid #221e1f; }
+
+.sort-btn {
+  display: inline-block;
+  margin-right: 10px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 1px solid #221e1f;
+  font-family: "Squada One", cursive;
+  font-size: 20px;
+  color: #221e1f;
+  text-decoration: none;
+  background-color: #80ad21; }
+  .sort-btn:last-child {
+    margin-right: 0; }
+  .sort-btn:hover {
+    background-color: #a4d53c; }
+
+#todo-list {
+  list-style: none;
+  margin: 20px 0 30px;
+  padding: 0;
+  border-top: 2px solid #333333;
+  border-left: 2px solid #333333;
+  border-right: 2px solid #333333; }
+  #todo-list > li {
+    margin: 0;
+    padding: 10px;
+    position: relative;
+    background-color: #80ad21;
+    color: #221e1f;
+    border-bottom: 2px solid #333333;
+    font-size: 25px; }
+    #todo-list > li.priority1 {
+      background-color: #e03e39; }
+    #todo-list > li.priority1.done {
+      background-color: #ff6b5b; }
+    #todo-list > li.priority2 {
+      background-color: #cbcc2b; }
+    #todo-list > li.priority2.done {
+      background-color: #e8e466; }
+    #todo-list > li.priority3 {
+      background-color: #80ad21; }
+    #todo-list > li.priority3.done {
+      background-color: #a4d53c; }
+
+.toggle {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -0.5em; }
+
+.deadline-wrapper {
+  margin: 0; }
+
+.label-deadline {
+  font-size: 18px; }
+
+.view {
+  position: relative;
+  padding-left: 25px; }
+
+.edit-title,
+.edit-deadline,
+.edit-radio-list,
+.edit-save-paragraph {
+  display: none; }
+
+.edit-radio-list {
+  list-style: none;
+  margin: 0 0 5px;
+  padding: 0; }
+  .edit-radio-list > li {
+    display: inline-block;
+    position: relative;
+    margin-right: 10px;
+    padding-left: 20px;
+    font-size: 18px; }
+    .edit-radio-list > li:last-child {
+      margin-right: 0; }
+  .edit-radio-list input {
+    position: absolute;
+    left: 0;
+    top: -0.2em; }
+
+.edit-save-paragraph {
+  margin: 0; }
+
+.edit-save {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 10px;
+  border: 1px solid #221e1f;
+  font-family: "Squada One", cursive;
+  font-size: 18px;
+  color: #221e1f;
+  text-decoration: none;
+  background-color: white; }
+  .edit-save:hover {
+    background-color: #cccccc; }
+
+.destroy {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -14px; }
+  .destroy:hover {
+    opacity: .7;
+    cursor: pointer; }
+
+.editing .edit-title,
+.editing .edit-deadline {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: middle; }
+.editing .edit-radio-list,
+.editing .edit-save-paragraph {
+  display: block; }
+.editing .label-deadline,
+.editing .label-title {
+  display: none; }
+
+.todo-count {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #333333;
+  color: white;
+  text-align: left; }
+
+#clear-completed {
+  display: inline-block;
+  margin: 0 0 15px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #80ad21;
+  color: #221e1f;
+  border-top: 1px solid #221e1f;
+  border-left: 1px solid #221e1f;
+  border-right: 1px solid #221e1f;
+  border-bottom: 3px solid #221e1f;
+  font-size: 25px;
+  font-family: "Squada One", cursive;
+  text-align: center; }
+  #clear-completed:hover {
+    margin: 2px 0 15px;
+    border: 1px solid #221e1f;
+    cursor: pointer;
+    background-color: #a4d53c; }

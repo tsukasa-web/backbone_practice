@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>ToDo Application</title>
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Abel">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Squada+One">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="common/css/style.css"/>
+</head>
+<body>
+
+<div id="todoapp">
+	<header>
+		<h1>Todo Application</h1>
+		<input id="new-todo" type="text" placeholder="What needs to be done?">
+		<p><label for="new-deadline" class="new-label">Dead Line</label><input id="new-deadline" type="date" name="deadline" required></p>
+		<ul class="radio-list">
+			<li><span class="new-label">Priority</span></li>
+			<li><input id="new-priority-must" type="radio" name="priority" value="priority1"><label for="new-priority-must">MUST</label></li>
+			<li><input id="new-priority-should" type="radio" name="priority" value="priority2"><label for="new-priority-should">SHOULD</label></li>
+			<li><input id="new-priority-normal" type="radio" name="priority" value="priority3" checked><label for="new-priority-normal">NORMAL</label></li>
+		</ul>
+		<p class="save-paragraph"><a id="new-save" href="#">SAVE</a></p>
+	</header>
+
+	<section id="main">
+		<h2>Todo Task</h2>
+		<p>
+			<input id="toggle-all" type="checkbox">
+			<label for="toggle-all">Mark all as complete</label>
+		</p>
+		<p>
+			<a id="sort-add" class="sort-btn" href="#">Sort Add</a>
+			<a id="sort-deadline" class="sort-btn" href="#">Sort Deadline</a>
+			<a id="sort-priority" class="sort-btn" href="#">Sort Priority</a>
+		</p>
+		<ul id="todo-list"></ul>
+	</section>
+
+	<footer>
+		<a id="clear-completed">Clear completed</a>
+		<div id="todo-count"></div>
+	</footer>
+</div>
+
+<!-- Templates -->
+<script type="text/template" id="item-template">
+	<div class="view">
+		<input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+		<label class="label-title"><%- title %></label>
+		<input class="edit-title" type="text" value="<%- title %>" />
+		<p class="deadline-wrapper"><label class="label-deadline"><%- deadline %></label><input class="edit-deadline" type="date" value="<%- deadline %>" /></p>
+		<ul class="edit-radio-list">
+			<li><input id="edit-priority-must" type="radio" name="edit-priority" value="priority1"><label for="edit-priority-must">MUST</label></li>
+			<li><input id="edit-priority-should" type="radio" name="edit-priority" value="priority2"><label for="edit-priority-should">SHOULD</label></li>
+			<li><input id="edit-priority-normal" type="radio" name="edit-priority" value="priority3"><label for="edit-priority-normal">NORMAL</label></li>
+		</ul>
+		<p class="edit-save-paragraph"><a class="edit-save" href="#">SAVE</a></p>
+		<a class="destroy"><i class="fa fa-times-circle"></i></a>
+	</div>
+</script>
+
+<script type="text/template" id="stats-template">
+	<% if (done) { %>
+	<a id="clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
+	<% } %>
+	<div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+</script>
+
+<!-- Scripts -->
+<script src="common/lib/json2.js"></script>
+<script src="common/lib/jquery-2.1.1.js"></script>
+<script src="common/lib/underscore.js"></script>
+<script src="common/lib/backbone.js"></script>
+<script src="common/lib/backbone.localStorage.js"></script>
+<script src="common/js/app.js"></script>
+
+</body>
+</html>
